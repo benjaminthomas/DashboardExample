@@ -1,0 +1,167 @@
+[
+    {
+        "id": 1,
+        "endpoint": "ReleaseVehicleHold",
+        "payload": "{\"type\":\"RELEASE\",\"status\":\"OK\"}",
+        "size": "257B",
+        "status": "Success",
+        "response": "{\"code\":200,\"type\":\"SUCCESS\",\"message\":\"processed successfully\"}",
+        "exceptiondetails": null,
+        "datetime": "06-12-2023 22:29:28",
+        "viewresend": "View"
+    },
+    {
+        "id": 2,
+        "endpoint": "AnotherAPI",
+        "payload": "{\"type\":\"UPDATE\",\"value\":\"123\"}",
+        "size": "512B",
+        "status": "Error",
+        "response": "{\"code\":400,\"type\":\"ERROR\",\"message\":\"error occurred\"}",
+        "exceptiondetails": "Exception details for AnotherAPI",
+        "datetime": "07-12-2023 09:15:30",
+        "viewresend": "Resend"
+    },
+    {
+        "id": 3,
+        "endpoint": "CreateOrder",
+        "payload": "{\"type\":\"ORDER\",\"items\":[{\"id\":1,\"name\":\"item1\"},{\"id\":2,\"name\":\"item2\"}]}",
+        "size": "128B",
+        "status": "Success",
+        "response": "{\"code\":201,\"type\":\"CREATED\",\"message\":\"order created\"}",
+        "exceptiondetails": null,
+        "datetime": "08-12-2023 12:45:00",
+        "viewresend": "View"
+    },
+    {
+        "id": 4,
+        "endpoint": "CancelReservation",
+        "payload": "{\"type\":\"CANCEL\",\"reservationID\":\"98765\"}",
+        "size": "180B",
+        "status": "Success",
+        "response": "{\"code\":200,\"type\":\"SUCCESS\",\"message\":\"reservation canceled\"}",
+        "exceptiondetails": null,
+        "datetime": "09-12-2023 14:30:22",
+        "viewresend": "View"
+    },
+    {
+        "id": 5,
+        "endpoint": "UpdateProfile",
+        "payload": "{\"type\":\"PROFILE\",\"name\":\"John Doe\",\"age\":30}",
+        "size": "200B",
+        "status": "Success",
+        "response": "{\"code\":200,\"type\":\"SUCCESS\",\"message\":\"profile updated\"}",
+        "exceptiondetails": null,
+        "datetime": "10-12-2023 18:20:15",
+        "viewresend": "Resend"
+    },
+    {
+        "id": 6,
+        "endpoint": "ProcessPayment",
+        "payload": "{\"type\":\"PAYMENT\",\"amount\":50.75}",
+        "size": "150B",
+        "status": "Error",
+        "response": "{\"code\":500,\"type\":\"ERROR\",\"message\":\"payment failed\"}",
+        "exceptiondetails": null,
+        "datetime": "11-12-2023 21:10:45",
+        "viewresend": "Resend"
+    },
+    {
+        "id": 7,
+        "endpoint": "RetrieveData",
+        "payload": "{\"type\":\"RETRIEVE\",\"query\":\"SELECT * FROM data\"}",
+        "size": "300B",
+        "status": "Success",
+        "response": "{\"code\":200,\"type\":\"SUCCESS\",\"message\":\"data retrieved\"}",
+        "exceptiondetails": null,
+        "datetime": "12-12-2023 09:05:30",
+        "viewresend": "View"
+    },
+    {
+        "id": 8,
+        "endpoint": "SubmitFeedback",
+        "payload": "{\"type\":\"FEEDBACK\",\"message\":\"Great service!\"}",
+        "size": "90B",
+        "status": "Success",
+        "response": "{\"code\":200,\"type\":\"SUCCESS\",\"message\":\"feedback received\"}",
+        "exceptiondetails": null,
+        "datetime": "13-12-2023 15:40:18",
+        "viewresend": "View"
+    },
+    {
+        "id": 9,
+        "endpoint": "RetrieveLogs",
+        "payload": "{\"type\":\"LOGS\",\"startDate\":\"2023-12-10\",\"endDate\":\"2023-12-13\"}",
+        "size": "250B",
+        "status": "Success",
+        "response": "{\"code\":200,\"type\":\"SUCCESS\",\"message\":\"logs retrieved\"}",
+        "exceptiondetails": null,
+        "datetime": "14-12-2023 12:15:55",
+        "viewresend": "View"
+    },
+    {
+        "id": 10,
+        "endpoint": "PlaceOrder",
+        "payload": "{\"type\":\"ORDER\",\"items\":[{\"id\":3,\"name\":\"item3\"},{\"id\":4,\"name\":\"item4\"}]}",
+        "size": "180B",
+        "status": "Success",
+        "response": "{\"code\":201,\"type\":\"CREATED\",\"message\":\"order placed\"}",
+        "exceptiondetails": null,
+        "datetime": "15-12-2023 17:30:40",
+        "viewresend": "View"
+    },
+    {
+        "id": 11,
+        "endpoint": "UpdatePreferences",
+        "payload": "{\"type\":\"PREFERENCES\",\"settings\":{\"theme\":\"dark\",\"notifications\":\"on\"}}",
+        "size": "120B",
+        "status": "Success",
+        "response": "{\"code\":200,\"type\":\"SUCCESS\",\"message\":\"preferences updated\"}",
+        "exceptiondetails": null,
+        "datetime": "16-12-2023 10:55:20",
+        "viewresend": "View"
+    },
+    {
+        "id": 12,
+        "endpoint": "SendNotification",
+        "payload": "{\"type\":\"NOTIFICATION\",\"message\":\"New update available!\"}",
+        "size": "100B",
+        "status": "Success",
+        "response": "{\"code\":200,\"type\":\"SUCCESS\",\"message\":\"notification sent\"}",
+        "exceptiondetails": null,
+        "datetime": "17-12-2023 08:20:10",
+        "viewresend": "View"
+    },
+    {
+        "id": 13,
+        "endpoint": "ProcessRequest",
+        "payload": "{\"type\":\"REQUEST\",\"details\":\"Processing request...\"}",
+        "size": "150B",
+        "status": "Success",
+        "response": "{\"code\":200,\"type\":\"SUCCESS\",\"message\":\"request processed\"}",
+        "exceptiondetails": null,
+        "datetime": "18-12-2023 14:10:25",
+        "viewresend": "View"
+    },
+    {
+        "id": 14,
+        "endpoint": "RetrieveInfo",
+        "payload": "{\"type\":\"INFO\",\"id\":123}",
+        "size": "80B",
+        "status": "Success",
+        "response": "{\"code\":200,\"type\":\"SUCCESS\",\"message\":\"info retrieved\"}",
+        "exceptiondetails": null,
+        "datetime": "19-12-2023 09:45:15",
+        "viewresend": "View"
+    },
+    {
+        "id": 15,
+        "endpoint": "GenerateReport",
+        "payload": "{\"type\":\"REPORT\",\"format\":\"PDF\"}",
+        "size": "200B",
+        "status": "Success",
+        "response": "{\"code\":200,\"type\":\"SUCCESS\",\"message\":\"report generated\"}",
+        "exceptiondetails": null,
+        "datetime": "20-12-2023 12:55:30",
+        "viewresend": "View"
+    }
+]

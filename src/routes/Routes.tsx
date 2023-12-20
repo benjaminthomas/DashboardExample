@@ -1,9 +1,9 @@
 import { Suspense, lazy, useEffect, useState } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import routes from "./index";
-import LandingPage from "../pages/LandingPage";
 import Loader from "../loader/loader";
-import DefaultLayout from "../layouts/defaultLayout";
+
+import SignIn from "../pages/signin";
 
 const DashboardLayout = lazy(() => import("../layouts/dashboardLayout"));
 
@@ -23,9 +23,7 @@ export default function RoutePath() {
   ) : (
     <>
       <Routes>
-        <Route path="/" element={<DefaultLayout />}>
-          <Route index element={<LandingPage />} />
-        </Route>
+        <Route path="/" element={<SignIn />} />
         <Route element={<DashboardLayout />}>
           {routes.map((routes, index) => {
             const { path, component: Component } = routes;

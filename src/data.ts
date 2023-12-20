@@ -16,7 +16,14 @@ import cargoHandlingDark from "/features/cargo-handling-dark.svg";
 import shaping from "/contentblocks/shaping.jpg";
 import solutions from "/contentblocks/solutions.jpg";
 
-import { BsArrowDown, BsCheck, BsExclamation } from "react-icons/bs";
+import {
+  BsArrowClockwise,
+  BsArrowDown,
+  BsArrowLeftRight,
+  BsArrowRight,
+  BsCheck,
+  BsExclamation,
+} from "react-icons/bs";
 
 export const links = [
   {
@@ -129,7 +136,7 @@ export const excellences = [
   },
 ] as const;
 
-export const responses = [
+export const vwReports = [
   {
     id: 1,
     title: "Total",
@@ -173,13 +180,146 @@ export const responses = [
   },
   {
     id: 4,
-    title: "Payload size",
+    title: "Reprocessed",
     status: {
-      label: "Incoming Payload size",
-      count: "6B",
-      color: "bg-warning",
-      textColor: "text-warning",
-      icon: BsArrowDown,
+      label: "Incoming Reprocessed",
+      count: "0",
+      color: "bg-success",
+      textColor: "text-success",
+      icon: BsCheck,
+    },
+  },
+  {
+    id: 5,
+    title: "PayloadSize",
+    status: {
+      label: "Incoming PayloadSize",
+      count: "0B",
+      color: "bg-blue-600",
+      textColor: "text-blue-600",
+      icon: BsArrowLeftRight,
+    },
+  },
+  {
+    id: 6,
+    title: "Total",
+    status: {
+      label: "Total Outgoing",
+      count: "0",
+      color: "bg-primary",
+      textColor: "text-primary",
+      icon: BsArrowRight,
+    },
+  },
+  {
+    id: 7,
+    title: "Success",
+    status: {
+      label: "Incoming success",
+      count: "10",
+      color: "bg-success",
+      textColor: "text-success",
+      icon: BsCheck,
+    },
+  },
+  {
+    id: 8,
+    title: "Failed",
+    status: {
+      label: {
+        title: "IbmiFailed",
+        count: "5",
+      },
+      label2: {
+        title: "VWFailed",
+        count: "5",
+      },
+      count: "10",
+      color: "bg-danger",
+      textColor: "text-danger",
+      icon: BsExclamation,
+      resend: true,
+    },
+  },
+  {
+    id: 9,
+    title: "Reprocessed",
+    status: {
+      label: "Incoming Reprocessed",
+      count: "0",
+      color: "bg-success",
+      textColor: "text-success",
+      icon: BsCheck,
+    },
+  },
+  {
+    id: 10,
+    title: "PayloadSize",
+    status: {
+      label: "Outgoing PayloadSize",
+      count: "0B",
+      color: "bg-blue-600",
+      textColor: "text-blue-600",
+      icon: BsArrowLeftRight,
+    },
+  },
+] as const;
+
+export const isuzuReports = [
+  {
+    id: 1,
+    title: "Total",
+    status: {
+      label: "Total",
+      count: "100",
+      color: "bg-primary",
+      textColor: "text-primary",
+      icon: BsArrowRight,
+    },
+  },
+  {
+    id: 2,
+    title: "Success",
+    status: {
+      label: "Success",
+      count: "10",
+      color: "bg-success",
+      textColor: "text-success",
+      icon: BsCheck,
+    },
+  },
+  {
+    id: 3,
+    title: "Failed",
+    status: {
+      label: "Failed",
+      count: "10",
+      color: "bg-danger",
+      textColor: "text-danger",
+      icon: BsExclamation,
+      resend: true,
+    },
+  },
+  {
+    id: 4,
+    title: "Reprocessed",
+    status: {
+      label: "Reprocessed",
+      count: "3",
+      color: "bg-success",
+      textColor: "text-success",
+      icon: BsCheck,
+    },
+  },
+  {
+    id: 5,
+    title: "PayloadSize",
+    status: {
+      label: "PayloadSize",
+      count: "0B",
+      color: "bg-blue-600",
+      textColor: "text-blue-600",
+      icon: BsArrowLeftRight,
     },
   },
 ] as const;

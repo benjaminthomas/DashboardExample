@@ -1,7 +1,7 @@
-import Incoming from "../components/dashboard/screens/isuzu/incoming";
-import Outgoing from "../components/dashboard/screens/isuzu/outgoing";
+import Incoming from "../components/dashboard/screens/volkswagen/incoming";
+import Outgoing from "../components/dashboard/screens/volkswagen/outgoing";
 import Metrics from "../components/dashboard/screens/metrics";
-import Volkswagen from "../components/dashboard/screens/volkswagen";
+import Volkswagen from "../components/dashboard/screens/isuzu";
 
 const coreRoutes = [
   {

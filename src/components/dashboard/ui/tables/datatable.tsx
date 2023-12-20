@@ -5,52 +5,30 @@ import {
   getPaginationRowModel,
   getFilteredRowModel,
   getSortedRowModel,
+  CellContext,
 } from "@tanstack/react-table";
-import mData from "../../../../tableData.json";
-import { useMemo, useState } from "react";
+import { useState } from "react";
+
 type Sorting = {
   id: string;
   desc: boolean;
 };
-type UserData = {
-  id: number;
-  first_name: string;
-  last_name: string;
-  email: string;
-  gender: string;
-  ip_address: string;
+
+type DataColumn = {
+  header: string;
+  accessorKey: string;
+  cell?: (props: CellContext<any, any>) => React.ReactElement;
 };
-export default function DataTable() {
-  const data = useMemo(() => mData, []);
-  const columns = [
-    {
-      header: "ID",
-      accessorKey: "id",
-    },
-    {
-      header: "First name",
-      accessorKey: "first_name",
-    },
-    {
-      header: "Last name",
-      accessorKey: "last_name",
-    },
-    {
-      header: "Email",
-      accessorKey: "email",
-    },
-    {
-      header: "Gender",
-      accessorKey: "gender",
-    },
-    {
-      header: "IP Address",
-      accessorKey: "ip_address",
-    },
-  ];
+
+type DataTableProps = {
+  data: any[];
+  columns: DataColumn[];
+};
+export default function DataTable({ data, columns }: DataTableProps) {
   const [sorting, setSorting] = useState<Sorting[]>([]);
   const [filtering, setFiltering] = useState("");
-  const table = useReactTable<UserData>({
+
+  const table = useReactTable<any>({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
@@ -65,7 +43,7 @@ export default function DataTable() {
     onGlobalFilterChange: setFiltering,
   });
   return (
-    <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <>
       <div className="flex items-center justify-between flex-column md:flex-row flex-wrap space-y-4 md:space-y-0 py-4 bg-white dark:bg-gray-900 px-4">
         <div>
           <div className="relative z-20 inline-block">
@@ -131,46 +109,48 @@ export default function DataTable() {
           />
         </div>
       </div>
-      <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-          {table.getHeaderGroups().map<React.ReactElement>((headerGroup) => (
-            <tr key={headerGroup.id}>
-              {headerGroup.headers.map<React.ReactElement>((header) => (
-                <th
-                  scope="col"
-                  className="px-6 py-3 text-left"
-                  key={header.id}
-                  onClick={header.column.getToggleSortingHandler()}
-                >
-                  {flexRender(
-                    header.column.columnDef.header,
-                    header.getContext()
-                  )}
-                  {header.column.getIsSorted() !== false && (
-                    <span>
-                      {header.column.getIsSorted() === "desc" ? " ↓" : " ↑"}
-                    </span>
-                  )}
-                </th>
-              ))}
-            </tr>
-          ))}
-        </thead>
-        <tbody>
-          {table.getRowModel().rows.map<React.ReactElement>((row) => (
-            <tr
-              key={row.id}
-              className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700"
-            >
-              {row.getVisibleCells().map<React.ReactElement>((cell) => (
-                <td key={cell.id} className="px-6 py-4">
-                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div className="relative overflow-x-auto shadow-md sm:rounded-lg primary-scrollbar">
+        <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+          <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            {table.getHeaderGroups().map<React.ReactElement>((headerGroup) => (
+              <tr key={headerGroup.id}>
+                {headerGroup.headers.map<React.ReactElement>((header) => (
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-left whitespace-nowrap cursor-pointer"
+                    key={header.id}
+                    onClick={header.column.getToggleSortingHandler()}
+                  >
+                    {flexRender(
+                      header.column.columnDef.header,
+                      header.getContext()
+                    )}
+                    {header.column.getIsSorted() !== false && (
+                      <span>
+                        {header.column.getIsSorted() === "desc" ? " ↓" : " ↑"}
+                      </span>
+                    )}
+                  </th>
+                ))}
+              </tr>
+            ))}
+          </thead>
+          <tbody>
+            {table.getRowModel().rows.map<React.ReactElement>((row) => (
+              <tr
+                key={row.id}
+                className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700"
+              >
+                {row.getVisibleCells().map<React.ReactElement>((cell) => (
+                  <td key={cell.id} className="px-6 py-4">
+                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
       <nav
         className="flex items-center flex-column flex-wrap md:flex-row justify-end p-4"
         aria-label="Table navigation"
@@ -212,6 +192,6 @@ export default function DataTable() {
           </li>
         </ul>
       </nav>
-    </div>
+    </>
   );
 }

@@ -43,7 +43,7 @@ export default function ModalVideo({
             aria-label="Watch the video"
           >
             <svg
-              className="w-16 h-16 sm:w-20 sm:h-20 hover:opacity-75 transition duration-150 ease-in-out"
+              className="w-12 h-12 hover:opacity-75 transition duration-150 ease-in-out"
               viewBox="0 0 88 88"
               xmlns="http://www.w3.org/2000/svg"
             >
